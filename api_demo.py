@@ -108,7 +108,7 @@ class TestHttpRequest(unittest.TestCase):
             print("执行接口测试出错，错误是{0}".format(e))
 
             test_result = "Fail"
-            #raise e
+            raise e
 
         finally:
                 self.t.write_back(data_item["id"] + 1, 7, str(res.json()))
