@@ -9,9 +9,9 @@ import requests
 
 # get 请求
 
-res = requests.get("https://www.baidu.com")
-print(res)
-print(res.request.headers)
+#res = requests.get("https://www.baidu.com")
+#print(res)
+#print(res.request.headers)
 # print(res.status_code)
 
 # http://150.109.156.47:8000/api/get_event_list/?eid=3
@@ -84,13 +84,13 @@ from do_excel import DoExcel
 #     unittest.main()
 
 
-test_data = DoExcel(r"C:\Users\ErvinChiu\Desktop\data.xlsx", "Sheet1").do_excel()
+test_data = DoExcel("data.xlsx", "Sheet1").do_excel()
 
 
 @ddt
 class TestHttpRequest(unittest.TestCase):
     def setUp(self) -> None:
-        self.t = DoExcel(r"C:\Users\ErvinChiu\Desktop\data.xlsx", "Sheet1")
+        self.t = DoExcel("data.xlsx", "Sheet1")
 
     @data(*test_data)
     def test_case_01(self, data_item):
